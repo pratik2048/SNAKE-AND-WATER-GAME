@@ -1,0 +1,44 @@
+# SNAKE-AND-WATER-GAME
+
+
+🐍💧🔫 Snake and Water Game
+A simple Python command-line game where the user plays Snake, Water, Gun against the computer. The computer’s choice is generated randomly, and the winner is decided using clear game logic. Perfect for beginners exploring Python fundamentals.
+
+
+
+#SNAKE AND WATER GAME
+import random
+'''
+1 for snake
+-1 for water
+0 for gun
+'''
+
+computer=random.choice([-1,0,1])
+youstr=input("enter your choice: ")
+youDict={"s": 1 , "w": -1 , "g": 0}
+reverseDict={1:"Snake", -1:"Water" , 0:"Gun"}
+
+you=youDict[youstr]
+
+print(f"You Chose {reverseDict[you]}\n Computer Chose {reverseDict[computer]}")
+
+
+if(computer==you):
+    print("it's draw")
+
+else:
+    if(computer== -1 and you== 1):
+        print("YOU WIN!")
+    elif(computer== -1 and you== 0):
+        print("YOU LOST!")
+    elif(computer== 1 and you== -1):
+        print("YOU LOST!")
+    elif(computer== 1 and you== 0):
+        print("YOU WIN!")
+    elif(computer== 0 and you== 1):
+        print("YOU LOST!")
+    elif(computer== 0 and you== -1):
+        print("YOU WIN!")
+    else:
+         print("Somthing Went Wrong!")
